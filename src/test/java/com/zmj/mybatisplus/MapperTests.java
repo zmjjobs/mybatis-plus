@@ -65,9 +65,13 @@ public class MapperTests {
     @Test
     public void testDelete(){
         //DELETE FROM user WHERE id=5
-        int result = userMapper.deleteById(5);
+        int result = userMapper.deleteById(2);
         System.out.println("影响的行数：" + result);
     }
 
-
+    @Test
+    public void selectByName(){
+        List<User> users = userMapper.selectByName("Jack");
+        users.forEach(System.out::println);
+    }
 }
